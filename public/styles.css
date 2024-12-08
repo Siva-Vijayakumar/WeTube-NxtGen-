@@ -60,8 +60,10 @@ h1 {
 
 .search-box {
     display: flex;
-    gap: 10px;
+    flex-direction: row-reverse;
+    gap: 6px;
     flex: 0 1 600px;
+    align-items: center;
 }
 
 input[type="text"] {
@@ -503,5 +505,162 @@ main {
 
     h1 {
         font-size: 18px;
+    }
+}
+
+/* Update mobile styles for search box and header */
+@media (max-width: 768px) {
+    .header-content {
+        padding: 0 8px;
+        gap: 6px;
+    }
+
+    h1 {
+        font-size: 18px;
+        flex-shrink: 0; /* Prevent title from shrinking */
+    }
+
+    .header-actions {
+        gap: 6px;
+        flex-wrap: nowrap; /* Prevent wrapping */
+    }
+
+    .search-box {
+        max-width: 120px;
+        min-width: 80px;
+        display: flex;
+        align-items: center;
+        gap: 4px; /* Reduce gap between input and button */
+    }
+
+    .search-box button {
+        padding: 0;
+        width: 28px; /* Make button smaller */
+        height: 28px;
+        min-width: 28px;
+        flex-shrink: 0; /* Prevent button from shrinking */
+    }
+
+    .search-box button svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    input[type="text"] {
+        padding: 4px 8px;
+        font-size: 12px;
+        height: 28px;
+        min-width: 0; /* Allow input to shrink */
+    }
+
+    /* Make action buttons smaller */
+    .trending-button,
+    .home-button {
+        width: 28px;
+        height: 28px;
+        padding: 4px;
+        flex-shrink: 0;
+    }
+
+    .trending-button svg,
+    .home-button svg {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+    .header-content {
+        padding: 0 4px;
+        gap: 4px;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
+    .search-box {
+        max-width: 100px;
+    }
+
+    .header-actions {
+        gap: 4px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    h1 {
+        font-size: 14px;
+    }
+
+    .search-box {
+        max-width: 80px;
+    }
+}
+
+/* Update search box styles */
+.search-box {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 6px;
+    flex: 0 1 600px;
+    align-items: center;
+}
+
+.search-box button {
+    background-color: var(--primary-green);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Mobile styles for search box */
+@media (max-width: 768px) {
+    .search-box {
+        max-width: 140px;
+        min-width: 80px;
+        gap: 4px;
+        flex-direction: row;
+    }
+
+    .search-box button {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        padding: 0;
+    }
+
+    .search-box button svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    input[type="text"] {
+        padding: 4px 8px;
+        font-size: 12px;
+        height: 28px;
+        min-width: 0;
+        width: calc(100% - 32px);
+    }
+}
+
+/* Smaller screens */
+@media (max-width: 480px) {
+    .search-box {
+        max-width: 110px;
+    }
+
+    .search-box button {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
     }
 } 
