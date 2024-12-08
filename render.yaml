@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: wetube
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: RAPIDAPI_KEY
+        sync: false 
